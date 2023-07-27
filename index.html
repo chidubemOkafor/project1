@@ -6,6 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-    welcome to web development class
+    <h1>Title</h1>
+    <table border="1" cellspacing="10px" cellpaddings="5px" width="50%">
+   
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Discription</th>    
+        </tr>
+    </thead>
+    <tbody class="body"></tbody>
+    </table>
 </body>
+<script type="module">
+    import {items} from "./items.js"
+
+    const body = document.querySelector(".body")
+        const insertValues = items.map((it, index) => `        
+        <tr>
+            <td>${index + 1}</td>
+            <td>${it.item}</td>
+            <td>${it.quantity}</td>
+            <td>${it.discription}</td>
+        </tr>`
+        ).join("")
+        body.innerHTML = insertValues   
+</script>
 </html>
